@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+<body>
+<h1>Translator</h1>
+<form method="get" th:action="@{/translate}">
+    <label for="sourceLang">Source language code:</label>
+    <input type="text" id="sourceLang" name="sourceLang" required>
+    <label for="targetLang">Target language code:</label>
+    <input type="text" id="targetLang" name="targetLang" required>
+    <label for="text">Text to translate:</label>
+    <input type="text" id="text" name="text" required>
+    <button type="submit">Translate</button>
+</form>
+<div th:if="${translation}">
+    <h1>Translation</h1>
+    <p th:text="${translation}"></p>
+</div>
+</body>
+</html>
