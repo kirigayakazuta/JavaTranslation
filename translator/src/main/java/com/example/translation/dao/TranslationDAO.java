@@ -11,15 +11,9 @@ import org.slf4j.LoggerFactory;
 @Component
 public class TranslationDAO {
 
-    @Value("${spring.datasource.url}")
-    private static String URL;
-
-    @Value("${spring.datasource.username}")
-    private static String USER;
-
-    @Value("${spring.datasource.password}")
-    private static String PASSWORD;
-
+    private static final String URL = "jdbc:postgresql://localhost:5432/translation_app_db";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "22194";
     private static final Logger logger = LoggerFactory.getLogger(TranslationController.class);
 
     private static Connection connection;
